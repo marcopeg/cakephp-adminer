@@ -8,7 +8,7 @@ This package contains ad Adminer distribution you can update or change as you wa
 That file is contained here only to speed up installation of this package!
 
 ## How to install?
-Adminer for CakePHP comes as a **webroot folder** so you need to download this repo and unzip it into you webroot folder:
+**Adminer for CakePHP** comes as a **webroot folder** so you need to download this repo and unzip it into you webroot folder:
 
     /App/webroot/adminer/index.php
     /App/webroot/adminer/adminer-x.x.x-mysql.php
@@ -18,3 +18,7 @@ To run Adminer with auto login you need to call this url on your browser:
 
     http://cake-install.org/adminer
     
+## Auto Login
+**Adminer for CakePHP** include your `App/Config/database.php` configuration file to **perform auto login**.
+
+<p style="color:red;font-weight:bold;text-align:center;">!!! This is a very security hole for your data !!!</p>
