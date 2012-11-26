@@ -3,9 +3,11 @@
  * Adminer for CakePHP
  * ===================
  * 
+ * Adminer extension to auto login using CakePHP default database connection.
  * 
  */
 
+// Just emulate some constants to interact with CakePHP.
 define('DS', DIRECTORY_SEPARATOR);
 define('APP', dirname(dirname(dirname($_SERVER['SCRIPT_FILENAME']))) . DS);
 
@@ -13,9 +15,9 @@ define('APP', dirname(dirname(dirname($_SERVER['SCRIPT_FILENAME']))) . DS);
 // database auto-login credentials
 define('DB_CONFIG', APP.'Config'.DS.'database.php');
 if (@include(DB_CONFIG)) {
-	$__db_config__ = new DATABASE_CONFIG;
 	$_GET["username"] = "";
 	// bypass database selection bug
+	$__db_config__ = new DATABASE_CONFIG;
 	$_GET["db"] = $__db_config__->default['database'];
 
 // loading error
