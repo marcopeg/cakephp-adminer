@@ -1,11 +1,17 @@
 Adminer for CakePHP
 ===================
 
-This package allow you to admin your database whithout logging in every time.  
-It uses `App/Config/database.php` credentials to log in Adminer and open the correct db.
+Admin you app database whithout logging in every time with full database credentials set.
 
-This package contains ad Adminer distribution you can update or change as you want.  
-That file is contained here only to speed up installation of this package!
+It uses `App/Config/database.php` credentials to **automagically log in Adminer** and open the correct db for you.
+
+**IMPORTANT:**  
+I wrote that extension **for developing enviroments** where database data should be lost or modified without causing problems!  
+**Do not use this script in production enviroments!**
+
+**NOTICE:**  
+This package contains ad [Adminer](http://www.adminer.org/) distribution you can update or change as you want.  
+That file is contained here only to make this package ready to use!
 
 ## How to install?
 **Adminer for CakePHP** comes as a **webroot folder** so you need to download this repo and unzip it into you webroot folder:
@@ -17,8 +23,14 @@ That file is contained here only to speed up installation of this package!
 To run Adminer with auto login you need to call this url on your browser:
 
     http://cake-install.org/adminer
-    
-## Auto Login
-**Adminer for CakePHP** include your `App/Config/database.php` configuration file to **perform auto login**.
 
-<p style="color:red;font-weight:bold;text-align:center;">!!! This is a very security hole for your data !!!</p>
+## Simple Security Layer
+**Adminer for CakePHP** allows you to setup a **simple password** to access your database manager tool in a more protected way.
+
+- rename `passwd.txt.default` to `passwd.txt` to enable simple security layer
+- open `passwd.txt` to set up your custom password, hash it with `md5()`
+
+Default password is "adminer" and is hashed with `md5()` to the passwd file.  
+
+**IMPORTANT:** This is a very **minimal security layer**.  
+**Please do not use _Adminer for CakePHP_ in production enviroment!**

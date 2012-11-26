@@ -7,9 +7,34 @@
  * 
  */
 
+
+
+
+
 // Just emulate some constants to interact with CakePHP.
 define('DS', DIRECTORY_SEPARATOR);
-define('APP', dirname(dirname(dirname($_SERVER['SCRIPT_FILENAME']))) . DS);
+define('HERE', dirname($_SERVER['SCRIPT_FILENAME']) . DS);
+define('APP', dirname(dirname(HERE)) . DS);
+
+if (file_exists(HERE.'passwd.txt')) {
+	session_start();
+	if (isset($_GET['exit'])) {
+		$_SESSION['afc'] = false;
+	}
+	if (!empty($_POST['passwd'])) {
+		if (md5($_POST['passwd']) == file_get_contents(HERE.'passwd.txt')) {
+			$_SESSION['afc'] = true;
+			header('Location: ?');
+			exit;
+		}
+	}
+	if (empty($_SESSION['afc'])) {
+		echo '<form action="?" method="post">';
+		echo '<input type="password" name="passwd" placeholder="Adminer for CakePHP Password" size="30">';
+		echo '</form>';
+		exit;
+	}
+}
 
 
 // database auto-login credentials
