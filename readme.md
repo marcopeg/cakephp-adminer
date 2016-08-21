@@ -1,10 +1,10 @@
---- IMPORTANT ---
+--- **IMPORTANT** ---
 
 **THIS IS AN OLD REPOSITORY**  
 I intentionally leave this repository available to remember me how I was coding back in 2012!  
 Please don't clone or use this repo because is certainly out of date!
 
---- IMPORTANT ---  
+--- **IMPORTANT** ---  
 
 
 
@@ -17,11 +17,11 @@ It uses `App/Config/database.php` credentials to **automagically log in Adminer*
 
 **IMPORTANT:**  
 I wrote that extension **for developing enviroments** where database data should be lost or modified without causing problems!  
-**Do not use this script in production enviroments!**
+**Do not use this script in production environments!**
 
 **NOTICE:**  
-This package contains ad [Adminer](http://www.adminer.org/) distribution you can update or change as you want.  
-That file is contained here only to make this package ready to use!
+This package contains an [Adminer](http://www.adminer.org/) distribution you can update or change as you want.  
+That file is included in this package to make it ready to use!
 
 ## How to install?
 **Adminer for CakePHP** comes as a **webroot folder** so you need to download this repo and unzip it into you webroot folder:
@@ -42,5 +42,5 @@ To run Adminer with auto login you need to call this url on your browser:
 
 Default password is "adminer" and is hashed with `md5()` to the passwd file.  
 
-**IMPORTANT:** This is a very **minimal security layer**.  
+**IMPORTANT** This is a very **minimal security layer** **IMPORTANT**  
 **Please do not use _Adminer for CakePHP_ in production enviroment!**
